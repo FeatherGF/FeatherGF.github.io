@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="index.css">
+    <title>Olegosite</title>
+</head>
+<body>
+<script>
+    window.onload = ()=>{
+        let frame = document.getElementById("content");
+        frame.onload = () => frame.style.height = frame.contentWindow.document.body.scrollHeight + 100 + 'px';
+        window.addEventListener('resize', () => frame.style.height = frame.contentWindow.document.body.scrollHeight + 100 + 'px');
+    }
+</script>
+<div id="root">
+    <div id="navbar">
+        <img src="" alt="logo" id="logo">
+        <div id="navbar-buttons">
+            <a href="pages/home.html" target="content">
+                <div>Home</div>
+                <img src="" alt="icon">
+            </a>
+            <a href="pages/about.html" target="content">
+                <div>About</div>
+                <img src="" alt="icon">
+            </a>
+            <a href="pages/items.html" target="content">
+                <div>Items</div>
+                <img src="" alt="icon">
+            </a>
+            <a href="pages/contact.html" target="content">
+                <div>Contact us</div>
+                <img src="" alt="icon">
+            </a>
+            <a href="pages/reviews.html" target="content">
+                <div>Reviews</div>
+                <img src="" alt="icon">
+            </a>
+        </div>
+    </div>
+    <iframe src="pages/home.html" name="content" frameborder="0" id="content" scrolling="no"></iframe>
+    <div id="filler"></div>
+    <div id="footer">
+        <div>One</div>
+        <div>Two</div>
+        <div>Three</div>
+    </div>
+</div>
+</body>
+</html>
