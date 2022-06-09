@@ -14,13 +14,32 @@ body {
 
 #footer {
     width: 100%;
-    background: gray;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     border-top: 2px solid #c5123a;
+    /*backdrop-filter: grayscale(30%);*/
+    position: relative;
+}
+
+#footer::after {
+    position: absolute;
+    content: "";
+    background: gray;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    z-index: -5;
+}
+
+#footer::before {
+    z-index: -10;
     background: url("./img/footer.jpg");
-    backdrop-filter: grayscale(30%);
     background-size: cover;
+    position: absolute;
+    content: "";
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
 }
 
 /* TODO: сделать нормальный по дизайну футер */
