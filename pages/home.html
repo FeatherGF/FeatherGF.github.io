@@ -7,113 +7,52 @@
     <title>KitchenAid</title>
 </head>
 <body>
+<script>
+    let slideIndex = 1;
+    let timeout;
+
+    let plusDivs = (n) => showDivs(slideIndex += n);
+
+    let showDivs = (n) => {
+        clearTimeout(timeout);
+        let i;
+        let x = document.getElementsByClassName("slide");
+        console.log(x)
+        if (n > x.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = x.length
+        }
+        for (i = 0; i < x.length; i++) {
+            x[i].classList.remove("active");
+            x[i].classList.add("hidden");
+        }
+        x[slideIndex - 1].classList.remove("hidden");
+        x[slideIndex - 1].classList.add("active");
+        timeout = setTimeout(() => plusDivs(1), 5000);
+    }
+
+    window.onload = () => {
+        timeout = setTimeout(()=>showDivs(slideIndex), 5000);
+    }
+</script>
 <div id="home">
     <h1 class="center">Welcome</h1>
     <div id="carousel"></div>
     <p class="center">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum
+        eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
     </p>
+    <div class="carousel">
+        <div class="slide" style="background-color: #9999ff"></div>
+        <div class="slide" style="background-color: #99ffd8"></div>
+        <div class="slide" style="background-color: #ffcf99"></div>
+        <div class="slide" style="background-color: #ff99ac"></div>
 
-    <section class="carousel" aria-label="Gallery">
-        <ol class="carousel__viewport">
-            <li id="carousel__slide1"
-                tabindex="0"
-                class="carousel__slide">
-                <div class="carousel__snapper">
-                    <a href="#carousel__slide4"
-                       class="carousel__prev">Go to last slide</a>
-                    <a href="#carousel__slide2"
-                       class="carousel__next">Go to next slide</a>
-                </div>
-            </li>
-            <li id="carousel__slide2"
-                tabindex="0"
-                class="carousel__slide">
-                <div class="carousel__snapper"></div>
-                <a href="#carousel__slide1"
-                   class="carousel__prev">Go to previous slide</a>
-                <a href="#carousel__slide3"
-                   class="carousel__next">Go to next slide</a>
-            </li>
-            <li id="carousel__slide3"
-                tabindex="0"
-                class="carousel__slide">
-                <div class="carousel__snapper"></div>
-                <a href="#carousel__slide2"
-                   class="carousel__prev">Go to previous slide</a>
-                <a href="#carousel__slide4"
-                   class="carousel__next">Go to next slide</a>
-            </li>
-            <li id="carousel__slide4"
-                tabindex="0"
-                class="carousel__slide">
-                <div class="carousel__snapper"></div>
-                <a href="#carousel__slide3"
-                   class="carousel__prev">Go to previous slide</a>
-                <a href="#carousel__slide1"
-                   class="carousel__next">Go to first slide</a>
-            </li>
-        </ol>
-        <aside class="carousel__navigation">
-            <ol class="carousel__navigation-list">
-                <li class="carousel__navigation-item">
-                    <a href="#carousel__slide1"
-                       class="carousel__navigation-button">Go to slide 1</a>
-                </li>
-                <li class="carousel__navigation-item">
-                    <a href="#carousel__slide2"
-                       class="carousel__navigation-button">Go to slide 2</a>
-                </li>
-                <li class="carousel__navigation-item">
-                    <a href="#carousel__slide3"
-                       class="carousel__navigation-button">Go to slide 3</a>
-                </li>
-                <li class="carousel__navigation-item">
-                    <a href="#carousel__slide4"
-                       class="carousel__navigation-button">Go to slide 4</a>
-                </li>
-            </ol>
-        </aside>
-    </section>
-    <p class="center">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
-
-    </p>
+        <button id="left-carousel-button" onclick="plusDivs(-1)">&#10094;</button>
+        <button id="right-carousel-button" onclick="plusDivs(1)">&#10095;</button>
+    </div>
 </div>
 </body>
 </html>
