@@ -34,22 +34,22 @@
     }
 
     window.onload = () => {
-        timeout = setTimeout(()=>showDivs(slideIndex), 5000);
+        timeout = setTimeout(() => showDivs(slideIndex), 5000);
     }
 </script>
 <div id="home">
-    <h1 class="center">Welcome</h1>
+    <h1 class="center">Кухонные машины KitchenAid</h1>
     <div id="carousel"></div>
     <p class="center">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi architecto at delectus deserunt, eum
-        eveniet hic, laborum maiores minima minus odit officiis quia repudiandae sunt suscipit velit vero voluptate.
+        Современные люди живут настолько насыщенной жизнью, что на насущную потребность в виде ежедневного приготовления
+        пищи просто не хватает времени. Бытовая техника для кухни помогает не только свести к минимуму временные
+        затраты, но и значительно облегчить сам процесс.
     </p>
     <div class="carousel">
-        <div class="slide" style="background-color: #9999ff"></div>
-        <div class="slide" style="background-color: #99ffd8"></div>
-        <div class="slide" style="background-color: #ffcf99"></div>
-        <div class="slide" style="background-color: #ff99ac"></div>
-
+        <div class="slide"><img src="../img/banner3.jpg" alt="banner3"></div>
+        <div class="slide"><img src="../img/banner2.jpg" alt="banner2"></div>
+        <div class="slide"><img src="../img/banner4.jpg" alt="banner4"></div>
+        <div class="slide"><img src="../img/banner1.jpg" alt="banner1"></div>
         <button id="left-carousel-button" onclick="plusDivs(-1)">&#10094;</button>
         <button id="right-carousel-button" onclick="plusDivs(1)">&#10095;</button>
     </div>
