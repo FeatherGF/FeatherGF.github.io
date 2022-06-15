@@ -19,6 +19,7 @@ body {
     border-top: 2px solid #c5123a;
     /*backdrop-filter: grayscale(30%);*/
     position: relative;
+    /* TODO выровнять колонки футера */
 }
 
 #footer::after {
@@ -42,7 +43,7 @@ body {
     height: 100%;
 }
 
-/* TODO: сделать нормальный по дизайну футер */
+/* TODO: доделать футер */
 
 #footer div span, #footer div p {
     margin: 5px 20px
@@ -51,7 +52,6 @@ body {
 #footer div p a {
     text-decoration: none;
     color: white;
-
 }
 
 #navbar {
@@ -117,16 +117,12 @@ span {
 
 #items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 250px);
+    grid-template-columns: repeat(auto-fit, 350px);
+    text-align: center;
+    margin: 0 20%;
+    border: 1px solid red;
+    flex-wrap: wrap;
 }
-
-/*#contact-fields {*/
-/*    display: grid;*/
-/*    width: 300px;*/
-/*    margin-right: auto;*/
-/*    margin-left: auto;*/
-/*    grid-template-columns: repeat(2, 1fr);*/
-/*}*/
 
 #feedback_form {
     width: 250px;
@@ -212,9 +208,15 @@ span {
         right: 35%;
         top: 30%;
     }
+    #items{
+        margin: 0 10%;
+        grid-template-columns: repeat(auto-fit, 250px);
+    }
+    .item{
+        margin: 0 20%;
+    }
 
-
-    /* TODO: сделать слайдер для мобилок*/
+/* TODO: расположить грид items по центру на мобилках*/
 
 }
 
