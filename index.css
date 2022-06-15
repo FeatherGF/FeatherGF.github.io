@@ -323,3 +323,26 @@ span {
         right: 150%;
     }
 }
+
+#reviews {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    padding: 20px;
+}
+
+.review {
+    padding: 5px;
+
+}
+
+.avatar img {
+    height: 50px;
+    width: 50px;
+    margin-right: 20px;
+}
+
+.avatar {
+    display: flex;
+    align-items: center;
+}
